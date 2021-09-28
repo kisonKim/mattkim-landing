@@ -2,8 +2,9 @@ version: "3"
 services:
   frontend:
     build:
-      # dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.dev
       context: ./frontend
+    container_name: app_frontend
     volumes:
       - /app/node_modules
       - ./frontend:/app
