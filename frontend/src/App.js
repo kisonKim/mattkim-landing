@@ -1,12 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import Keyvisual from './components/Keyvisual';
-import styled, {createGlobalStyle} from "styled-components";
+import {createGlobalStyle} from "styled-components";
+import KeyMessage from './components/KeyMessage';
 function App() {
   return (
     <>
     <GlobalStyle />
     <Keyvisual />
+    <KeyMessage />
     </>
   );
 }
