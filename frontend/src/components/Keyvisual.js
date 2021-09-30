@@ -46,6 +46,14 @@ const Keyvisual = () => {
           <FixedText>I AM</FixedText>
           <TypingText ref={typingText} className="typing"/>
         </Typed>
+        <ScrollBox>
+          <div class="scroll-bar">
+            <div class="scroll-ball"></div>
+          </div>
+          <div class="scroll-text">
+            SCROLL
+          </div>
+        </ScrollBox>
       </LeftBox>  
       <Empty>
 
@@ -66,6 +74,7 @@ const Container = styled.section`
 const LeftBox = styled.div`
   flex:1;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   width:100%;
@@ -102,6 +111,51 @@ const TypingText = styled.div`
   font-weight:800;
   border-right:2px solid white;
   animation: ${cursorAnimation} 0.6s step-end infinite;
+`;
+
+const scrollMove  = keyframes`
+  0%{
+    box-shadow: 0 0 10px 4px white;
+    top:0;
+  }
+
+
+  100%{
+    box-shadow: 0 0 10px 0 white;
+    top:85%;
+  }
+`
+
+const ScrollBox = styled.div`
+  position:absolute;
+  bottom :7%;
+  left:50%;
+  height:50px;
+  transform:translate3d(-50%,-50%,0);
+  
+  .scroll-bar {
+    position:relative;
+    width:10px;
+    height:100%;
+    border-radius: 10px;
+    margin: 0 auto;
+    background-color: rgba(230, 230, 230, 0.6); 
+  }
+  .scroll-text {
+    margin-top: 17px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+  }
+  .scroll-ball {
+    position:absolute;
+    border-radius:100%;
+    background-color:white;
+    width:100%;
+    height:10px;
+    box-shadow: 0 0 5px 2px white;
+    animation: ${scrollMove} 2s linear infinite;
+  }
 `;
 
 
