@@ -55,9 +55,6 @@ const Keyvisual = () => {
           </div>
         </ScrollBox>
       </LeftBox>  
-      <Empty>
-
-      </Empty>
     </Container>
   )
 }
@@ -67,7 +64,11 @@ const Container = styled.section`
   width:100vw;
   height:100vh;
   background: url(${keyvisualImg});
-  background-size:cover;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #aecdad;
+  backdrop-filter: blur(5px);
 `;
 
 
@@ -86,11 +87,6 @@ const LeftBox = styled.div`
 
 const Typed = styled.div`
   padding-left:10%;
-`;
-
-const Empty = styled.div`
-  flex:1;
-  display:block;
 `;
 
 const FixedText = styled.div`
