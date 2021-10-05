@@ -1,6 +1,6 @@
 import React,{ useState, useEffect, useRef } from 'react'
 import styled,{ keyframes } from 'styled-components'
-import keyvisualImg from '../images/keyvisual.jpg'
+import keyvisualImg from '../../images/keyvisual.jpg'
 
 
 
@@ -8,7 +8,7 @@ const Keyvisual = () => {
   const typingTextArr = ['A JS Developer','A Front-end Developer','A ReactJS Developer', 'A NodeJS Developer', 'A Full Stack Developer']; /* The text */ 
   let textIdx = 0;
   let i = 0;
-  let typingSpeed = 70;
+  let typingSpeed = 40;
   const typingText = useRef(null);
   
   const typingTextWriter = () => {
@@ -17,7 +17,7 @@ const Keyvisual = () => {
       i++;
       setTimeout(typingTextWriter, typingSpeed);
     }else{
-      setTimeout(typingTextDelete, 1250);
+      setTimeout(typingTextDelete, 850);
     }
   }
 
@@ -30,16 +30,18 @@ const Keyvisual = () => {
     } else {
       textIdx++;
       textIdx%=5;
-      setTimeout(typingTextWriter, 1250);
+      setTimeout(typingTextWriter, 850);
+    }
   }
-}
-  
+
   useEffect(() => {
     typingTextWriter();
   }, [])
   
 
+
   return (
+    <>
     <Container>
       <LeftBox>
         <Typed>
@@ -47,15 +49,17 @@ const Keyvisual = () => {
           <TypingText ref={typingText} className="typing"/>
         </Typed>
         <ScrollBox>
-          <div class="scroll-bar">
-            <div class="scroll-ball"></div>
+          <div className="scroll-bar">
+            <div className="scroll-ball"></div>
           </div>
-          <div class="scroll-text">
+          <div className="scroll-text">
             SCROLL
           </div>
         </ScrollBox>
       </LeftBox>  
+      
     </Container>
+    </>
   )
 }
 
@@ -153,7 +157,6 @@ const ScrollBox = styled.div`
     animation: ${scrollMove} 2s linear infinite;
   }
 `;
-
 
 
 export default Keyvisual;

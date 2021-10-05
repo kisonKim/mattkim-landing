@@ -1,14 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import Keyvisual from './components/Keyvisual';
 import {createGlobalStyle} from "styled-components";
-import KeyMessage from './components/KeyMessage';
+import MyInfo from './components/MyInfo'
 function App() {
+
   return (
     <>
     <GlobalStyle />
     <Keyvisual />
-    <KeyMessage />
+    <MyInfo />
     </>
   );
 }
@@ -23,6 +23,12 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
+    /* scroll bar display none */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera*/
+    }
   }
 
   code {
