@@ -67,6 +67,8 @@ const Container = styled.section`
   display:flex;
   width:100vw;
   height:100vh;
+  min-width:1300px;
+  min-height:800px;
   background: url(${keyvisualImg});
   background-size:contain;
   background-repeat: no-repeat;
@@ -85,7 +87,7 @@ const LeftBox = styled.div`
   width:100%;
   color:white;
   text-shadow: 0 0 5px white;
-  font-size: 3.8vw;
+  font-size: 3.8rem;
   font-weight:800;
 `;
 
@@ -106,7 +108,7 @@ const cursorAnimation = keyframes`
 
 const TypingText = styled.div`
   width:fit-content;
-  height:4.8vw;
+  height:4.8rem;
   padding: 0 10px 0 0;
   font-weight:800;
   border-right:2px solid white;

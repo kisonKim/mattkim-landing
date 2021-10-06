@@ -2,6 +2,7 @@ import './App.css';
 import Keyvisual from './components/Keyvisual';
 import {createGlobalStyle} from "styled-components";
 import MyInfo from './components/MyInfo'
+import Footer from "./components/Footer"
 function App() {
 
   return (
@@ -9,6 +10,7 @@ function App() {
     <GlobalStyle />
     <Keyvisual />
     <MyInfo />
+    <Footer />
     </>
   );
 }
