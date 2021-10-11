@@ -43,7 +43,7 @@ const Keyvisual = () => {
   return (
     <>
     <Container>
-      <LeftBox>
+      <FlexBox>
         <Typed>
           <FixedText>I AM</FixedText>
           <TypingText ref={typingText} className="typing"/>
@@ -56,7 +56,7 @@ const Keyvisual = () => {
             SCROLL
           </div>
         </ScrollBox>
-      </LeftBox>  
+      </FlexBox>  
       
     </Container>
     </>
@@ -78,7 +78,7 @@ const Container = styled.section`
 `;
 
 
-const LeftBox = styled.div`
+const FlexBox = styled.div`
   flex:1;
   display: flex;
   position: relative;
