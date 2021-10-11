@@ -67,8 +67,6 @@ const Container = styled.section`
   display:flex;
   width:100vw;
   height:100vh;
-  min-width:1300px;
-  min-height:800px;
   background: url(${keyvisualImg});
   background-size:contain;
   background-repeat: no-repeat;
@@ -82,17 +80,24 @@ const FlexBox = styled.div`
   flex:1;
   display: flex;
   position: relative;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
   width:100%;
   color:white;
   text-shadow: 0 0 5px white;
   font-size: 3.8rem;
   font-weight:800;
+  @media ${({ theme }) => theme.device.mobile} {
+    margin-top:20%;
+    align-items: unset;
+    font-size: 1.8rem;
+  }
 `;
 
 const Typed = styled.div`
   padding-left:10%;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding-left:5%;
+  }
 `;
 
 const FixedText = styled.div`
@@ -113,6 +118,9 @@ const TypingText = styled.div`
   font-weight:800;
   border-right:2px solid white;
   animation: ${cursorAnimation} 0.6s step-end infinite;
+  @media ${({ theme }) => theme.device.mobile} {
+    height:2rem;
+  }
 `;
 
 const scrollMove  = keyframes`

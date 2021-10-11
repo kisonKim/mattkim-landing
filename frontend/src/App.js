@@ -1,19 +1,15 @@
 import './App.css';
-import Keyvisual from './components/Keyvisual';
 import {createGlobalStyle} from "styled-components";
 import {ThemeProvider} from 'styled-components'
-import MyInfo from './components/MyInfo'
-import Footer from "./components/Footer"
 import theme from './styles/Theme'
+import MainContainer from './components/MainContainer';
 function App() {
 
   return (
     <>
     <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <Keyvisual />
-    <MyInfo />
-    <Footer />
+      <GlobalStyle />
+      <MainContainer />
     </ThemeProvider>
     </>
   );

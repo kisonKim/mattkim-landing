@@ -20,7 +20,7 @@ const MyInfo = () => {
           </div>
           <div className="git">
             <h2> - Bri-x WEB Developer<small>(front, back)</small></h2>
-            <img className="gitImage" src={gitImg} width={40} height={40} alt="git logo"/>
+            <img className="gitImage" src={gitImg} alt="git logo"/>
             <a href={"https://github.com/kisonKim"} rel="noreferrer" target={"_blank"}>https://github.com/kisonKim</a>
           </div>
           <div className="portfolios">
@@ -57,8 +57,6 @@ const Container = styled.section`
   width:100vw;
   height:100vh;
   padding-top:10%;
-  min-width:1300px;
-  min-height:800px;
   background:linear-gradient(#aecdad, lightgrey);
   @media ${({ theme }) => theme.device.mobile} {
     flex-direction: column;
@@ -73,7 +71,9 @@ const LeftBox = styled.div`
   display:flex;
   justify-content: center;
   align-items: center;
-  
+  @media ${({ theme }) => theme.device.mobile} {
+    margin-top:20%;
+  }
 `;
 
 const RightBox = styled.div`
@@ -126,7 +126,7 @@ const InfoBox = styled.div`
   .portfolios {
     ul li {
       font-weight:light;
-      font-size:20px;
+      font-size:0.8rem;
       &:not(:first-child) {
         margin-top:10px;
       } 
@@ -135,12 +135,31 @@ const InfoBox = styled.div`
   .gitImage {
     vertical-align: middle;
     margin-right:10px;
+    width:40px;
+    height:40px;
   }
   .sticker {
     position:absolute;
     top:-10px;
     left:50%;
     transform: translate3d(-50%,-50%,0);
+  }
+
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 80%;
+    padding: 40px 10px;
+    font-size:0.8rem;
+    h2{
+      font-size: 1.5em;
+    }
+    
+    .stickerHead {
+      font-size:2em;
+    }
+    .gitImage {
+      width:30px;
+      height:30px;
+    }
   }
 `;
 
